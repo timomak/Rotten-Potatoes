@@ -2,7 +2,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const app = express()
 var mongoose = require('mongoose');
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://localhost:27017/rotten-potatoes', { useMongoClient: true });
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/rotten-potatoes-tamk');
 const bodyParser = require('body-parser');
