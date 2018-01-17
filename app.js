@@ -1,12 +1,12 @@
-const express = require('express')
-const methodOverride = require('method-override')
-const app = express()
+var express = require('express')
+var methodOverride = require('method-override')
+var app = express()
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://localhost:27017/rotten-potatoes', { useMongoClient: true });
 mongoose.createConnection(process.env.MONGODB_URI || 'mongodb://localhost/rotten-potatoes');
-const bodyParser = require('body-parser');
-const Review = mongoose.model('Review', {
+var bodyParser = require('body-parser');
+var Review = mongoose.model('Review', {
   title: String,
   movieTitle: String,
   description: String
