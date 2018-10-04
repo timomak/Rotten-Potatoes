@@ -8,12 +8,21 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.2",
+    "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.10",
     "mongoose": "^4.13.9"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timomak/Rotten-Potatoes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/timomak/Rotten-Potatoes/issues"
+  },
+  "homepage": "https://github.com/timomak/Rotten-Potatoes#readme",
+  "description": ""
 }
