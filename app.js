@@ -1,5 +1,6 @@
 var exphbs = require('express-handlebars');
 const express = require('express')
+const methodOverride = require('method-override')
 const app = express()
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/rotten-potatoes', {useMongoClient: true});
@@ -11,6 +12,7 @@ const Review = mongoose.model('Review', {
   movieTitle: String
 });
 
+app.use(methodOverride('_method'))
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -48,6 +50,25 @@ app.get('/reviews/:id', (req, res) => {
     console.log(err.message);
   })
 })
+
+// Update review
+app.put('/reviews/:id', (req, res) => {
+  Review.findByIdAndUpdate(req.params.id, req.body)
+    .then(review => {
+      res.redirect(`/reviews/${review._id}`)
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+})
+
+// Edit review
+app.get('/reviews/:id/edit', (req, res) => {
+  Review.findById(req.params.id, function(err, review) {
+    res.render('reviews-edit', {review: review});
+  })
+})
+
 
 app.listen(3000, () => {
   console.log('App listening on port 3000!')
