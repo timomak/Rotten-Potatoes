@@ -12,8 +12,8 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: true }));
 const reviews = require('./controllers/reviews')(app);
 
-app.listen(3000, () => {
-  console.log('App listening on port 3000!')
+app.listen(27017, () => {
+  console.log('App listening on port 27017!')
 })
 
 // For Chai
