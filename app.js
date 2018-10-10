@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/rotten-potatoes
 // mongoose.connect('mongodb://localhost/rotten-potatoes', {useMongoClient: true});
 const bodyParser = require('body-parser');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 27017;
 app.listen(port);
 
 app.use(methodOverride('_method'))
