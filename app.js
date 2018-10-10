@@ -16,6 +16,7 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: true }));
 const reviews = require('./controllers/reviews')(app);
+const comments = require('./controllers/comments')(app);
 const Review = require('./models/review')
 
 

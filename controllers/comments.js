@@ -1,3 +1,4 @@
+const Comment = require('../models/comment');
 module.exports = (app) => {
     // CREATE Comment
   app.post('/reviews/comments', (req, res) => {
